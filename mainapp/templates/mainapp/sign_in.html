@@ -1,0 +1,14 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+<div class="wrapper_auth">
+    {{ error_auth }}
+    <form class="form_auth" method="post">
+        {% csrf_token %}
+        {{ form_auth.as_p }}
+        <button>Войти</button>
+        <h3>Ещё не зарегистрированы ?</h3>
+        <button><a href="{% url 'sign_up' %}">Зарегистрироваться</a></button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<h1>Профиль</h1>
+<div>
+    {{ user.username }}
+    <form method="post" action="{% url 'logout_user' %}">
+        {% csrf_token %}
+        <button>Выйти</button>
+    </form>
+</div>
+{% else %}
+
+{% endif %}
+{% endblock %}

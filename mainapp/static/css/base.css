@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Runic&display=swap");
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 2000px;
+  font-family: var(--lato);
+  font-style: normal;
+  text-decoration: none;
+  list-style: none;
+}
+body {
+  background: var(--green);
+}
+a {
+  margin: 0;
+  color: var(--white);
+}
+button {
+  border: none;
+}
+
+:root {
+  --black: #17181d;
+  --white: #fff;
+  --green: #171f21;
+
+  --vikings: "Noto Sans Runic", sans-serif;
+  --lato: "Lato", sans-serif;
+  --tr_button: all 1s;
+}
+/*=======================
+  Header Section
+========================*/
+header {
+  padding: 30px;
+  position: sticky;
+  background: #171f21;
+}
+.navigation {
+  display: flex;
+}
+.navigation ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50%;
+  max-width: 60%;
+}
+.navigation li {
+  color: var(--white);
+  font-size: 20px;
+  cursor: pointer;
+}
+.user {
+  width: 40px;
+  height: auto;
+  cursor: pointer;
+  margin: 0;
+  margin-right: 200px;
+}
+
+/*=======================
+  Main Section
+========================*/
+.wrapper {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  max-height: 2200px;
+}
+.wrapper h1 {
+  font-family: var(--vikings);
+  color: var(--white);
+  font-size: 50px;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  line-height: 100px;
+}
+.wrapper p {
+  color: var(--white);
+  font-size: 20px;
+  padding: 50px 0;
+  line-height: 35px;
+}
+.main--image {
+  width: 50%;
+  height: 90vh;
+  margin: 0;
+  object-fit: cover;
+}
+
+/*=======================
+  MEDIA
+========================*/
+@media screen and (max-width: 1330px) {
+  .main--image {width: 40%;}
+  .wrapper h1 {
+    font-size: 40px;
+    line-height: 70px;
+  }
+}
+@media screen and (max-width: 1150px) {
+    
+}
+@media screen and (max-width: 1024px) {
+  .wrapper {flex-direction: column-reverse;}
+  .main--image {width: 100%; height: 100vh;}
+  .conten_absolut {
+    position: absolute;
+    top: 20%;
+    text-align: center;
+  }
+  header {
+    position: absolute; 
+    z-index: 1;
+    width: 300px;
+    height: 100vh;
+    display: none;
+  }
+  .wrapper-burger {
+    position: absolute;
+    display: block;
+  }
+ .navigation, .navigation ul {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 30px 0;
+  }
+  .navigation li {margin: 10px 0;}
+  .user {margin-right: 0;}
+}
+@media screen and (max-width: 620px) {
+    .wrapper h1 {
+        font-size: 30px;
+        line-height: 50px;
+    }
+    .wrapper p {
+       padding: 50px 110px; 
+       width: 450px;
+    }
+}

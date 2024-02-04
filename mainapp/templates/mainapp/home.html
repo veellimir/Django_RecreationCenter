@@ -1,0 +1,23 @@
+{% extends 'mainapp/base.html' %} {% load static %} {% block content %}
+<main>
+  <div class="wrapper">
+    <div class="conten_absolut">
+      <h1>
+        ᚱecreᛏion cenᛏeᚱ <br />
+        ᚨor viᚠings
+      </h1>
+      <p>
+        Отдых вдали от города в стиле эпохи викингов <br />
+        Мы предлагаем вам погрузиться в самую <br />
+        незабываемую атмосферу 7 века
+      </p>
+    </div>
+    <img
+      src="{% static 'mainapp/maintree.jpg' %}"
+      class="main--image"
+      alt="Отдых в лесу"
+    />
+  </div>
+  
+</main>
+{% endblock %}
