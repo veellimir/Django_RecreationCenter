@@ -6,6 +6,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 
+from .models import Services, Tag
+
 
 def sign_up(request):
     if request.method == 'GET':
@@ -15,20 +17,17 @@ def sign_up(request):
     else:
         if request.POST['password1'] == request.POST['password1']:
             try:
-                user = User.objects.create_user(
-                                                request.POST['username'],
+                user = User.objects.create_user(request.POST['username'],
                                                 password=request.POST['password1'])
                 user.save()
                 login(request, user)
                 return redirect('home')
             except InternalError:
-                return render(request,
-                              'mainapp/sign_up.html',
+                return render(request, 'mainapp/sign_up.html',
                               {'form_auth': UserCreationForm(),
                                'error_auth': 'Имя пользователя уже существует'})
         else:
-            return render(request,
-                          'mainapp/sign_up.html',
+            return render(request, 'mainapp/sign_up.html',
                           {'form_auth': UserCreationForm(),
                            'error_auth': 'Пароли не совпадают'})
 
@@ -53,11 +52,13 @@ def sign_in(request):
 def logout_user(request):
     if request.method == 'POST':
         logout(request)
-        return redirect('sign_in')
+        return redirect('home')
 
 
 def home(request):
-    return render(request, 'mainapp/home.html')
+    services = Services.objects.all()
+    context = {'services': services}
+    return render(request, 'mainapp/home.html', context)
 
 
 @login_required()

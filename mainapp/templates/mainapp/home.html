@@ -12,30 +12,50 @@
         незабываемую атмосферу 7 века
       </p>
     </div>
-    <img src="{% static 'mainapp/maintree.jpg' %}" class="main--image" alt="Отдых в лесу"/>
+    <img
+      src="{% static 'mainapp/maintree.jpg' %}"
+      class="main--image"
+      alt="Отдых в лесу"
+    />
   </div>
 
 
   <div class="wrapper--title-about">
     <h2>Наши преимущества</h2>
     <div class="title_about">
-        <div>
-          <div class="icon_title png_image_percent"></div>
-          <p class="s">Нет сбора за бронирование</p>
-        </div>
-        <div>
-          <div class="icon_title png_image_rest"></div>
-          <p>Более пяти тысяч мест для отдыха</p>
-        </div>
-        <div>
-          <div class="icon_title png_image_reservations"></div>
-          <p>Легкий процесс бронирования</p>
-        </div>
-        <div>
-          <div class="icon_title png_image_payment"></div>
-          <p>Разные способы оплаты</p>
-        </div>
+      <div>
+        <div class="icon_title png_image_percent"></div>
+        <p class="s">Нет сбора за бронирование</p>
+      </div>
+      <div>
+        <div class="icon_title png_image_rest"></div>
+        <p>Более пяти тысяч мест для отдыха</p>
+      </div>
+      <div>
+        <div class="icon_title png_image_reservations"></div>
+        <p>Легкий процесс бронирования</p>
+      </div>
+      <div>
+        <div class="icon_title png_image_payment"></div>
+        <p>Разные способы оплаты</p>
+      </div>
     </div>
   </div>
+
+
+  <section>
+    <div class="wrapper--section-services">
+      {% for service in services %}
+      <div class="services_card">
+        <img src="{{ service.feature_image.url }}" alt="турбаза" />
+        <div class="card_title">
+          <h3>{{ service.title }}</h3>
+          <p>От {{ service.price }} к / за сутки</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  
 </main>
 {% endblock %}
