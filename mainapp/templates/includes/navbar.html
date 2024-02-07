@@ -28,7 +28,7 @@
     <ul>
       <li><a href="{% url 'home' %}">Главная</a></li>
       <li><a href="">Забронировать</a></li>
-      <li><a href="">Дома и цены</a></li>
+      <li><a href="{% url 'service' %}">Дома и цены</a></li>
       <li><a href="">О нас</a></li>
     </ul>
     {% if user.is_authenticated %}
@@ -43,7 +43,7 @@
       <h4>{{ user.username }}</h4>
       <form class="logout" method="post" action="{% url 'logout_user' %}">
         {% csrf_token %}
-        <button>Выйти</button>
+        <button class="btn-btn_form">Выйти</button>
       </form>
     </div>
     {% else %}

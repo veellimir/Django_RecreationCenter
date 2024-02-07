@@ -55,12 +55,18 @@ def logout_user(request):
         return redirect('home')
 
 
+@login_required()
+def profile(request):
+    return render(request, 'mainapp/profile.html')
+
+
 def home(request):
     services = Services.objects.all()
     context = {'services': services}
     return render(request, 'mainapp/home.html', context)
 
 
-@login_required()
-def profile(request):
-    return render(request, 'mainapp/profile.html')
+def service(request):
+    services = Services.objects.all()
+    context = {'services': services}
+    return render(request, 'mainapp/services-page.html', context)

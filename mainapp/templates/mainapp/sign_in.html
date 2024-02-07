@@ -6,9 +6,11 @@
     <form class="form_auth" method="post">
         {% csrf_token %}
         {{ form_auth.as_p }}
-        <button>Войти</button>
-        <h3>Ещё не зарегистрированы ?</h3>
-        <button><a href="{% url 'sign_up' %}">Зарегистрироваться</a></button>
+        <div class="wrapper-btn_login">
+            <button class="btn-btn_form">Войти</button>
+            <h3>Ещё не зарегистрированы ?</h3>
+            <button class="btn-btn_form"><a href="{% url 'sign_up' %}">Зарегистрироваться</a></button>
+        </div>
     </form>
 </div>
 {% endblock %}

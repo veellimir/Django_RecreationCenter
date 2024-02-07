@@ -1,0 +1,13 @@
+<section>
+    <div class="wrapper--section-services">
+      {% for service in services %}
+      <div class="services_card">
+        <img src="{{ service.feature_image.url }}" alt="турбаза" />
+        <div class="card_title">
+          <h3>{{ service.title }}</h3>
+          <p>От {{ service.price }} к / за сутки</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+</section>
