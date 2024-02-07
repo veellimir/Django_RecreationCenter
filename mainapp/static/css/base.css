@@ -12,18 +12,14 @@
   background-repeat: no-repeat;
 }
 
-body {
-  background: var(--green);
-}
+body {background: var(--green);}
 
 a {
   margin: 0;
   color: var(--white);
 }
 
-button {
-  border: none;
-}
+button {border: none;}
 
 :root {
   --black: #17181d;
@@ -34,9 +30,41 @@ button {
   --lato: "Lato", sans-serif;
   --tr_button: all 1s;
 }
+/*=======================
+  Form Section
+========================*/
+.form_auth {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  width: 300px;
+  min-height: 400px;
+  height: 40%;
+  border-radius: 12px;
+}
+.form_auth input {
+  width: 200px;
+  height: 30px;
+  margin: 10px auto;
+  padding: 20px;
+}
+.form_auth label {color: var(--black);font-size: 20px;}
+.form_auth p {display: contents;}
+.btn-btn_form {
+  width: 150px;
+  height: 40px;
+  background: var(--green);
+  cursor: pointer;
+  border-radius: 10px;
+  color: var(--white);
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.wrapper-btn_login {text-align: center;}
 
 /*=======================
-  Header Section
+  Header Section INCLUDE
 ========================*/
 header {
   padding: 30px;
@@ -58,9 +86,8 @@ header {
     opacity: 1;
   }
 }
-.navigation {
-  display: flex;
-}
+.navigation {display: flex;}
+
 .navigation ul {
   display: flex;
   justify-content: space-evenly;
@@ -80,9 +107,8 @@ header {
   margin: 0;
   margin-right: 200px;
 }
-.wrapper-burger {
-  display: none;
-}
+.wrapper-burger {display: none;}
+
 .modal_user {
   position: absolute;
   z-index: 3;
@@ -106,9 +132,7 @@ header {
   right: 20px;
   cursor: pointer;
 }
-.modal_user img {
-  width: 45px;
-}
+.modal_user img {width: 45px;}
 .modal_user h4 {
   letter-spacing: 2px;
   font-size: 22px;
@@ -118,17 +142,6 @@ header {
   bottom: 20px;
   width: 100%;
   text-align: center;
-}
-.logout button {
-  width: 200px;
-  height: 50px;
-  background: var(--green);
-  cursor: pointer;
-  border-radius: 10px;
-  color: var(--white);
-  font-size: 15px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 /*=======================
   Main Section
@@ -164,10 +177,10 @@ header {
 }
 
 /*=======================
-  ADVANTAGE SECTION
+  Advantage Section
 ========================*/
 .wrapper--title-about {
-  margin: 100px auto;
+  margin: 65px auto;
   text-align: center;
   cursor: default;
 }
@@ -186,18 +199,10 @@ header {
   height: 50px;
   background-size: contain;
 }
-.png_image_percent {
-  background-image: url(../mainapp/percent.png);
-}
-.png_image_rest {
-  background-image: url(../mainapp/home.png);
-}
-.png_image_reservations {
-  background-image: url(../mainapp/reservations.png);
-}
-.png_image_payment {
-  background-image: url(../mainapp/payment.png);
-}
+.png_image_percent {background-image: url(../mainapp/percent.png);}
+.png_image_rest {background-image: url(../mainapp/home.png);}
+.png_image_reservations {background-image: url(../mainapp/reservations.png);}
+.png_image_payment {background-image: url(../mainapp/payment.png);}
 
 .title_about p {
   color: var(--white);
@@ -208,7 +213,7 @@ header {
 }
 
 /*=======================
-  SERVICES CARD
+  SERVICES CARD INCLUDE
 ========================*/
 .wrapper--section-services {
   background-color: rgb(23, 49, 49);
@@ -219,9 +224,7 @@ header {
   width: 70%;
   margin: auto;
 }
-.services_card {
-  margin: 0 0 100px 0;
-}
+.services_card {margin: 0 0 100px 0;}
 .services_card,
 .services_card img {
   width: 300px;
@@ -243,23 +246,40 @@ header {
   font-size: 20px;
   letter-spacing: 1px;
 }
+.select_all {
+  color: var(--white);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+
+/*=======================
+  SERVICES PAGE
+========================*/
+.wrapper-content {
+
+} 
+
+
+
+
+
+
+
 
 /*=======================
   MEDIA
 ========================*/
 @media screen and (max-width: 1330px) {
-  .main--image {
-    width: 40%;
-  }
+  .main--image {width: 40%;}
   .wrapper h1 {
     font-size: 40px;
     line-height: 70px;
   }
 }
 @media screen and (max-width: 1024px) {
-  .wrapper {
-    flex-direction: column-reverse;
-  }
+  .wrapper {flex-direction: column-reverse;}
   .main--image {
     width: 100%;
     height: 100vh;
@@ -284,9 +304,7 @@ header {
     margin: 20px 10px;
     cursor: pointer;
   }
-  .wrapper-burger img {
-    width: 60px;
-  }
+  .wrapper-burger img {width: 60px;}
   .navigation,
   .navigation ul {
     flex-direction: column;
@@ -294,12 +312,8 @@ header {
     text-align: center;
     margin: 30px 0;
   }
-  .navigation li {
-    margin: 10px 0;
-  }
-  .user {
-    margin-right: 0;
-  }
+  .navigation li {margin: 10px 0;}
+  .user {margin-right: 0;}
 }
 @media screen and (max-width: 620px) {
   .wrapper h1 {
