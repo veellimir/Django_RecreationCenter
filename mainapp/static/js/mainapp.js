@@ -1,3 +1,4 @@
+// User modal
 const userIcon = document.querySelector('.user'),
       userModal = document.querySelector('.modal_user');
 
@@ -14,6 +15,7 @@ const userIcon = document.querySelector('.user'),
     });
 
 
+// Scroll header
 let header = document.querySelector('header'),
     headerH = document.querySelector('header').clientHeight,
     social = document.querySelector('.social');
@@ -25,3 +27,16 @@ let header = document.querySelector('header'),
         
         else {header.classList.remove('active_header')}
     }
+
+
+// Hover input auth
+const inputAuth = document.querySelectorAll('.input_auth'),
+      btnSubmit = document.querySelector('.btn_submit');
+
+inputAuth.forEach(el => {
+    el.addEventListener('click', () => {
+        el.style.border = '1px solid var(--input_positive)'
+        el.style.transitionDuration = '0.1s'
+    })
+})
+

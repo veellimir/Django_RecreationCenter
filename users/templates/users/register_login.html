@@ -1,0 +1,16 @@
+{% extends 'mainapp/base.html' %} 
+
+
+{% block content %}
+<div class="wrapper--form_auth">
+    <form action="{% url 'login' %}" method="post" class="form__auth">
+        {% csrf_token %}
+        <h4>Войти</h4>
+        <input type="text" name="username" required placeholder="Логин" class="input_auth">
+        <input type="password" name="password" required placeholder="Пароль" class="input_auth">
+    
+        <input type="submit" value="Войти" class="btn_submit">
+        <h5>Ещё не зарегестрированы ?</h5>
+    </form>
+</div>
+{% endblock %}

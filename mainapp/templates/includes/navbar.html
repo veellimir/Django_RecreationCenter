@@ -31,7 +31,7 @@
       <li><a href="{% url 'service' %}">Дома и цены</a></li>
       <li><a href="">О нас</a></li>
     </ul>
-    {% if user.is_authenticated %}
+    {% if request.user.is_authenticated %}
     <img
       class="user"
       src="{% static 'mainapp/user.png' %}"
@@ -41,13 +41,13 @@
       <a href="{% url 'profile' %}"><div class="settings_user"></div></a>
       <img src="{% static 'mainapp/user.png' %}" alt="аватар" />
       <h4>{{ user.username }}</h4>
-      <form class="logout" method="post" action="{% url 'logout_user' %}">
+      <form class="logout" method="post" action="{% url 'logout' %}">
         {% csrf_token %}
         <button class="btn-btn_form">Выйти</button>
       </form>
     </div>
     {% else %}
-    <a href="{% url 'sign_in' %}">
+    <a href="{% url 'login' %}">
       <img class="user" src="{% static 'mainapp/user.png' %}" alt="Войти" />
     </a>
     {% endif %}
