@@ -17,20 +17,20 @@
 
 
 ## Functionality
-   :white_check_mark: ***Регистрация (bold italic)***
-   :white_check_mark: ***Авторизация (bold italic)***
-   :white_check_mark: ***Разлогинивание (bold italic)***
-   :white_check_mark: ***Модели домов (bold italic)***
-   :white_check_mark: ***Модели тегов (bold italic)***
-   :white_check_mark: ***Модель для слайдера (bold italic)***
-   :white_check_mark: ***Страница профиля (bold italic)***
-   :white_check_mark: ***Добавление домов через админ панель (bold italic)***
-   :white_check_mark: ***Добавление меню через админ панель (bold italic)***
-   :white_check_mark: ***Добавление развлечений через админ панель (bold italic)***
-   :white_check_mark: ***Добавление контента в слайдер через админ панель (bold italic)***
-   
-   :black_square_button: ***Чат (bold italic)***
-   :black_square_button: ***Комментарии к сайту (bold italic)***
-   :black_square_button: ***Доступ персонала (bold italic)***
-   :black_square_button: ***Открытие новых возможностей по прибытию пользователя (bold italic)***
+   :white_check_mark: ***Регистрация*** <br>
+   :white_check_mark: ***Авторизация*** <br>
+   :white_check_mark: ***Разлогинивание***<br>
+   :white_check_mark: ***Модели домов***<br>
+   :white_check_mark: ***Модели тегов***<br>
+   :white_check_mark: ***Модель для слайдера***<br>
+   :white_check_mark: ***Страница профиля***<br>
+   :white_check_mark: ***Добавление домов через админ панель***<br>
+   :white_check_mark: ***Добавление меню через админ панель***<br>
+   :white_check_mark: ***Добавление развлечений через админ панель***<br>
+   :white_check_mark: ***Добавление контента в слайдер через админ панель***<br><br>
+
+   :black_square_button: ***Чат***<br>
+   :black_square_button: ***Комментарии к сайту***<br>
+   :black_square_button: ***Доступ персонала***<br>
+   :black_square_button: ***Открытие новых возможностей по прибытию пользователя***<br>
 
