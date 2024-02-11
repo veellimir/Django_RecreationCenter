@@ -15,8 +15,10 @@ urlpatterns = [
 
 
     path('', views.home, name='home'),
-    # path('profile/', views.profile, name='profile'),
     path('services/', views.service, name='service'),
+    path('menu/', views.menu, name='menu'),
+    path('entertainment/', views.entertainment, name='entertainment'),
+    path('about/', views.about, name='about'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

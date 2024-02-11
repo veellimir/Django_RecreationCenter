@@ -1,8 +1,6 @@
-{% extends 'mainapp/base.html' %} 
-{% load static %} 
-
-{% block content %}
+{% extends 'mainapp/base.html' %} {% load static %} {% block content %}
 <main>
+  <!-- CONTENT -->
   <div class="wrapper">
     <div class="conten_absolut">
       <h1>
@@ -16,13 +14,13 @@
       </p>
     </div>
     <img
-      src="{% static 'mainapp/maintree.jpg' %}"
+      src="{% static 'mainapp/maintwo.jpg' %}"
       class="main--image"
       alt="Отдых в лесу"
     />
   </div>
 
-
+  <!-- TITLE SECTION -->
   <div class="wrapper--title-about">
     <h2>Наши преимущества</h2>
     <div class="title_about">
@@ -44,7 +42,39 @@
       </div>
     </div>
   </div>
-  {% include 'includes/services.html' %}
+
+  <!-- SLIDER SECTION -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      {% for info_slide in info_slider %}
+      <div class="swiper-slide">
+        <h4>{{ info_slide.description }}</h4>
+        <img src="{{ info_slide.image_slider.url }}" alt="База отдыха" />
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- SERVICES SECTION -->
+  <div class="services_title">
+    <h2>Каталог Домов</h2>
+    {% include 'includes/services.html' with services=services|slice:":6" %}
+    <a href="{% url 'service' %}"><h4>Смотреть все...</h4></a>
+  </div>
+
+   <!-- MENU SECTION -->
+   <div class="services_title">
+    <h2>Меню</h2>
+    {% include 'includes/menu.html' with services=services|slice:":6" %}
+    <a href="{% url 'menu' %}"><h4>Смотреть все...</h4></a>
+  </div>
+
+   <!-- ENTERTAIMENT SECTION -->
+   <div class="services_title">
+    <h2>Развлечение на территории</h2>
+    {% include 'includes/entertainment.html' with services=services|slice:":6" %}
+    <a href="{% url 'service' %}"><h4>Смотреть все...</h4></a>
+  </div>
 
 </main>
 {% endblock %}

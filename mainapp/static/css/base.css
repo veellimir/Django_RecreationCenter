@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Runic&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 * {
   margin: 0 auto;
   padding: 0;
@@ -15,26 +16,31 @@
 body {
   background: var(--green);
 }
-
 a {
   margin: 0;
   color: var(--white);
 }
-
 button {
   border: none;
+}
+.btn_buy {
+  width: 300px;
+  height: 50px;
+  background: #05485b;
+  margin: 10px 0 10px 0;
 }
 
 :root {
   --black: #17181d;
   --white: #fff;
   --green: #171f21;
+  --blue: #05485b;
+  --olive: #808040;
 
   --form_color: #bed2d8;
   --input_color: rgb(171, 171, 71);
-  --input_positive: rgb(16, 134, 75);
+  --input_warning: rgba(139, 189, 136, 0.702);
 
-  --btn_negative: #90b3ba;
   --btn_positive: #4e6064;
 
   --vikings: "Noto Sans Runic", sans-serif;
@@ -51,6 +57,7 @@ button {
   background: var(--white);
   border-radius: 12px;
   text-align: center;
+  margin-top: 10vh;
 }
 .form__auth {
   padding: 50px;
@@ -71,13 +78,19 @@ button {
   background: var(--form_color);
 }
 .btn_submit {
-  background: var(--btn_negative);
+  background: var(--blue);
   border: none;
-  width: 150px;
+  width: 260px;
   height: 40px;
   cursor: pointer;
+  border-radius: 5px;
+  color: var(--white);
+  text-transform: uppercase;
+  margin: 20px;
 }
-.btn_submit_positive { background: var(--btn_positive);}
+.btn_submit_positive {
+  background: var(--blue);
+}
 /*=======================
   Header Section INCLUDE
 ========================*/
@@ -116,6 +129,9 @@ header {
   color: var(--white);
   font-size: 20px;
   cursor: pointer;
+}
+.navigation a:hover {
+  color: var(--olive);
 }
 .user {
   width: 40px;
@@ -164,6 +180,7 @@ header {
   width: 100%;
   text-align: center;
 }
+
 /*=======================
   Main Section
 ========================*/
@@ -242,20 +259,60 @@ header {
 }
 
 /*=======================
+  SLIDER SECTION
+========================*/
+.swiper {
+  width: 100%;
+  height: 60vh;
+  max-height: 70vh;
+  position: relative;
+  z-index: -1;
+}
+.swiper-slide img,
+.swiper-slide {
+  width: 100%;
+  object-fit: cover;
+  height: 60vh;
+  max-height: 70vh;
+}
+.swiper h4 {
+  position: absolute;
+  color: var(--white);
+  font-size: 40px;
+  width: 700px;
+  font-weight: 100;
+  font-family: "Pacifico", cursive;
+  line-height: 55px;
+  top: 20vh;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+/*=======================
   SERVICES CARD INCLUDE
 ========================*/
+.services_title {
+  text-align: center;
+  margin: 80px 0;
+}
+.services_title h2 {
+  color: var(--white);
+  font-size: 35px;
+  margin-bottom: 50px;
+}
+.services_title h4 {
+  font-size: 20px;
+  color: var(--form_color);
+}
 .wrapper--section-services {
-  background-color: rgb(23, 49, 49);
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 30px;
   grid-row-gap: 30px;
   width: 70%;
   margin: auto;
 }
-.services_card {
-  margin: 0 0 100px 0;
-}
+.services_card {margin: 0 0 200px 0;}
 .services_card,
 .services_card img {
   width: 300px;
@@ -265,13 +322,15 @@ header {
 .card_title {
   color: var(--white);
   margin: 10px auto;
+  height: 300px;
   text-align: center;
 }
 .card_title h3 {
   font-size: 25px;
   text-transform: uppercase;
   margin-bottom: 20px;
-  letter-spacing: 7px;
+  letter-spacing: 2px;
+  height: 50px;
 }
 .card_title p {
   font-size: 20px;
@@ -284,10 +343,66 @@ header {
 }
 
 /*=======================
-  SERVICES PAGE
+  ABOUT SECTION
 ========================*/
-.wrapper-content {
+.wrapper-about img {
+  width: 100%;
+  min-height: 600px;
+  max-height: 730px;
+  object-fit: cover;
+  object-position: top;
 }
+.shadow {
+  width: 100%;
+  height: 15vh;
+  background: #05485b82;
+  content: "";
+  border-radius: inherit;
+  opacity: 0.7;
+  filter: blur(90px);
+}
+.wrapper-article h1 {
+  text-align: center;
+  color: var(--white);
+  font-size: 40px;
+}
+.content_about {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 50px 0;
+}
+.images_about,
+.images_about img {
+  width: 500px;
+}
+.images_about img {
+  margin: 15px;
+  cursor: pointer;
+}
+
+.wrapper--article_description {
+  width: 40%;
+  height: auto;
+  background: var(--white);
+  border: 2px solid var(--blue);
+  border-radius: 6px;
+}
+.wrapper--article_description p {
+  color: var(--black);
+  font-size: 20px;
+  padding: 25px;
+  text-align: left;
+}
+
+/*=======================
+  FOOTER SECTION
+========================*/
+footer {
+  background-color: var(--black);
+  width: 100%;
+  height: 300px;
+}
+
 
 /*=======================
   MEDIA

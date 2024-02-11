@@ -27,9 +27,10 @@
     </a>
     <ul>
       <li><a href="{% url 'home' %}">Главная</a></li>
-      <li><a href="">Забронировать</a></li>
+      <li><a href="{% url 'menu' %}">Меню</a></li>
       <li><a href="{% url 'service' %}">Дома и цены</a></li>
-      <li><a href="">О нас</a></li>
+      <li><a href="{% url 'entertainment' %}">Развлечение</a></li>
+      <li><a href="{% url 'about' %}">О нас</a></li>
     </ul>
     {% if request.user.is_authenticated %}
     <img
