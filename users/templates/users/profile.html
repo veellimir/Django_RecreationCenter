@@ -1,20 +1,27 @@
 {% extends 'mainapp/base.html' %}
 
 {% block content %}
+<div class="wrapper-account">
+    <h1>Добро пожаловать {{ profile.name }}</h1>
+    <div class="account">
+        <img src="{{ profile.profile_image.url }}" class="user_img" alt="Изображение пользователя">
+        <div class="info--user">
+            <ul>
+                <li><span class="text--user">Логин <input class="input_auth" type="text" placeholder="{{ profile.name }}"></span></li>
+                <li><span class="text--user">Имя <input class="input_auth" type="text" placeholder="{{ user.first_name }}"></span></li>
+                <li><span class="text--user">Фамилия <input class="input_auth" type="text" placeholder="{{ profile.surname }}"></span></li>
+                <li><span class="text--user">Email <input class="input_auth" type="email" placeholder="{{ profile.surname }}"></span></li>
+            </ul>
+        </div>
+    </div>
 
-{% if request.user.is_authenticated %}
-
-<h1>Профиль</h1>
-<div>
-    {{ user.username }}
-    <form method="post" action="">
-        {% csrf_token %}
-        <button>Выйти</button>
-    </form>
+    <div>
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button class="btn_submit btn_submit__center">Выйти</button>
+        </form>
+    </div>
 </div>
-
-{% else %}
-
-{% endif %}
-
 {% endblock %}
+
+{% block footer %}{% endblock footer %}

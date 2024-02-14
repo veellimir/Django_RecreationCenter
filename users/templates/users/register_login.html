@@ -1,16 +1,46 @@
 {% extends 'mainapp/base.html' %} 
 
-
+{% load static %}
+ 
 {% block content %}
+
+{% if page == 'register' %}
+<div class="wrapper--form_auth">
+    <form action="{% url 'register' %}" method="post" class="form__auth">
+        <a href="{% url 'home' %}"><img class="logo" src="{% static 'mainapp/logo.png' %}" alt="Логотип"></a>
+        {% csrf_token %}
+        <h4>Регистрация</h4>
+
+        {% for field in form %}
+        <label class="title_login">{{ field.label }}:</label>
+        {{ field }} 
+
+            {% for error in field.errors %}
+            <p style="color: red;">{{ error }}</p>   
+            {% endfor %}
+        {% endfor %}
+
+        
+        <input type="submit" value="Зарегестрироваться" class="btn_submit">
+        <h5 class="btn_login"><a href="{% url 'login' %}">Уже есть аккаунт ?</a></h5>
+    </form>
+</div>
+
+{% else %}
 <div class="wrapper--form_auth">
     <form action="{% url 'login' %}" method="post" class="form__auth">
         {% csrf_token %}
+        <a href="{% url 'home' %}"><img class="logo" src="{% static 'mainapp/logo.png' %}" alt="Логотип"></a>
         <h4>Войти</h4>
         <input type="text" name="username" required placeholder="Логин" class="input_auth">
         <input type="password" name="password" required placeholder="Пароль" class="input_auth">
     
         <input type="submit" value="Войти" class="btn_submit">
-        <h5>Ещё не зарегестрированы ?</h5>
+        <h5 class="btn_login"><a href="{% url 'register' %}">Ещё не зарегестрированы ?</a></h5>
     </form>
 </div>
+{% endif %}
+
 {% endblock %}
+
+{% block footer %}{% endblock footer %}

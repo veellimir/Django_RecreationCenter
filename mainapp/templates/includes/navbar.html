@@ -33,18 +33,25 @@
       <li><a href="{% url 'about' %}">О нас</a></li>
     </ul>
     {% if request.user.is_authenticated %}
-    <img
-      class="user"
-      src="{% static 'mainapp/user.png' %}"
-      alt="Пользователь"
-    />
+
+      {% if user.profile.profile_image.url %}
+          <img class="user" src="{{ user.profile.profile_image.url }}" alt="Пользователь">
+      {% else %}
+          <img class="user" src="{% static 'mainapp/user.png' %}" alt="Пользователь">
+      {% endif %}
+
     <div class="modal_user" style="display: none">
       <a href="{% url 'profile' %}"><div class="settings_user"></div></a>
-      <img src="{% static 'mainapp/user.png' %}" alt="аватар" />
+      {% if user.profile.profile_image.url %}
+          <img class="user-img-modal" src="{{ user.profile.profile_image.url }}" alt="Пользователь">
+      {% else %}
+          <img src="{% static 'mainapp/user.png' %}" alt="Пользователь">
+      {% endif %}
       <h4>{{ user.username }}</h4>
+      
       <form class="logout" method="post" action="{% url 'logout' %}">
         {% csrf_token %}
-        <button class="btn-btn_form">Выйти</button>
+        <button class="btn_submit">Выйти</button>
       </form>
     </div>
     {% else %}
