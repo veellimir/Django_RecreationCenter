@@ -59,9 +59,7 @@ button {
   text-align: center;
   margin-top: 10vh;
 }
-.form__auth {
-  padding: 50px;
-}
+.form__auth {padding: 32px;}
 .form__auth h4 {
   color: var(--black);
   text-transform: uppercase;
@@ -70,7 +68,7 @@ button {
 .input_auth {
   width: 260px;
   height: 40px;
-  margin: 20px;
+  margin: 8px;
   padding: 20px;
   border-radius: 6px;
   border: none;
@@ -88,9 +86,18 @@ button {
   text-transform: uppercase;
   margin: 20px;
 }
-.btn_submit_positive {
-  background: var(--blue);
+.btn_submit_positive {background: var(--blue);}
+.btn_login a {color: var(--blue);}
+.logo {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
 }
+.title_login {
+  float: inline-start;
+  margin-left: 40px;
+}
+
 /*=======================
   Header Section INCLUDE
 ========================*/
@@ -105,6 +112,7 @@ header {
   transition: all 1s ease;
   animation-name: header-active;
   background: var(--black);
+  top: 0;
 }
 @keyframes header-active {
   50% {
@@ -130,19 +138,16 @@ header {
   font-size: 20px;
   cursor: pointer;
 }
-.navigation a:hover {
-  color: var(--olive);
-}
+.navigation a:hover {color: var(--olive);}
 .user {
-  width: 40px;
+  width: 42px;
   height: auto;
   cursor: pointer;
   margin: 0;
   margin-right: 200px;
+  border-radius: 56px 
 }
-.wrapper-burger {
-  display: none;
-}
+.wrapper-burger {display: none;}
 
 .modal_user {
   position: absolute;
@@ -157,6 +162,10 @@ header {
   color: var(--black);
   padding-top: 20px;
 }
+.user-img-modal {
+  height: 45px;
+  border-radius: 23px;
+}
 .settings_user {
   background-image: url(../mainapp/settings.png);
   width: 30px;
@@ -167,9 +176,7 @@ header {
   right: 20px;
   cursor: pointer;
 }
-.modal_user img {
-  width: 45px;
-}
+.modal_user img {width: 45px;}
 .modal_user h4 {
   letter-spacing: 2px;
   font-size: 22px;
@@ -237,18 +244,10 @@ header {
   height: 50px;
   background-size: contain;
 }
-.png_image_percent {
-  background-image: url(../mainapp/percent.png);
-}
-.png_image_rest {
-  background-image: url(../mainapp/home.png);
-}
-.png_image_reservations {
-  background-image: url(../mainapp/reservations.png);
-}
-.png_image_payment {
-  background-image: url(../mainapp/payment.png);
-}
+.png_image_percent {background-image: url(../mainapp/percent.png);}
+.png_image_rest {background-image: url(../mainapp/home.png);}
+.png_image_reservations {background-image: url(../mainapp/reservations.png);}
+.png_image_payment {background-image: url(../mainapp/payment.png);}
 
 .title_about p {
   color: var(--white);
@@ -395,6 +394,65 @@ header {
 }
 
 /*=======================
+  PROFILE PAGE
+========================*/
+.wrapper-account {
+  text-align: center;
+  color: var(--white);
+  margin: 20px;
+}
+.wrapper-account h1 {margin: 20px;}
+
+.account {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  width: 700px;
+  background: #05485b2d;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+.user_img {
+  width: 190px;
+  height: 190px;
+  border-radius: 107px;
+  margin: 20px;
+  cursor: pointer;
+}
+.info--user {
+  width: 300px; 
+  text-align: left; 
+  padding: 20px;
+}
+
+.info--user li {margin-top: 10px;}
+.text--user {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px 0;
+}
+.text--user input {font-size: 18px; margin-bottom: 10px;}
+
+.text--user input::placeholder {
+  color: var(--blue); 
+  font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*=======================
   FOOTER SECTION
 ========================*/
 footer {
@@ -402,6 +460,16 @@ footer {
   width: 100%;
   height: 300px;
 }
+
+
+
+
+
+
+
+
+
+
 
 
 /*=======================

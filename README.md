@@ -32,5 +32,7 @@
    :black_square_button: ***Чат***<br>
    :black_square_button: ***Комментарии к сайту***<br>
    :black_square_button: ***Доступ персонала***<br>
+   :black_square_button: ***Новостная лента***<br>
+   :black_square_button: ***Погода***<br>
    :black_square_button: ***Открытие новых возможностей по прибытию пользователя***<br>
 

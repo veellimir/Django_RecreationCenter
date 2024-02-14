@@ -11,9 +11,22 @@
 <body>
    {% include 'includes/navbar.html' %}
 
-    {% block content %}{% endblock %}
+    {% if messages %}
+        {% for msg in messages %}
+        <div>
+            <div class="alert alert">
+                <p>dddddd{{ msg }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    {% endif %}
 
+   {% block content %}{% endblock %}
+
+   {% block footer %}
    {% include 'includes/footer.html' %}
+   {% endblock footer %}
+
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="{% static 'js/mainapp.js' %}"></script>
