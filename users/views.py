@@ -6,20 +6,21 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 from .models import Profile
-from .forms import CustomUserRegisterForm
+from .forms import CustomUserRegisterForm, ProfileForm
 
 
 def register_user(request):
     """the function references the same page register_login.html"""
     page = 'register'
-    form = CustomUserRegisterForm(request.POST)
+    form = CustomUserRegisterForm()
     show_footer = False
 
     if request.method == 'POST':
+        form = CustomUserRegisterForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
-            # user.username = user.username.lower()
-            user.username = user.username
+            user.username = user.username.lower()
+            # user.username = user.username
             user.save()
 
             messages.success(request, f'Добро пожаловать {user}')
@@ -37,22 +38,22 @@ def login_user(request):
         return redirect('profile')
 
     if request.method == 'POST':
-        username = request.POST['username']
-        # username = request.POST['username'].lower()
+        # username = request.POST['username']
+        username = request.POST['username'].lower()
         password = request.POST['password']
 
         try:
             user = User.objects.get(username=username)
         except ObjectDoesNotExist:
-            print('Имя пользователя не существует')
-            messages.error(request, 'Имя пользователя не существует')
+            messages.error(request, f'Имя {username} не существует')
 
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
             login(request, user)
+            messages.info(request, f'Здравствуйте {username}')
             return redirect('home')
-        print('Неверный логин или пароль')
+
         messages.error(request, 'Неверный пароль')
     return render(request, 'users/register_login.html')
 
@@ -69,3 +70,21 @@ def profile(request):
 
     return render(request, 'users/profile.html', context)
 
+
+@login_required(login_url='login')
+def edit_profile(request):
+    """the function references the same page profile.html"""
+    page = 'edit-profile'
+    form = CustomUserRegisterForm(request.POST)
+    profile = request.user.profile
+    form = ProfileForm(instance=profile)
+
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+
+            return redirect('profile')
+
+    context = {'page': page, 'form': form}
+    return render(request, 'users/profile.html', context)
