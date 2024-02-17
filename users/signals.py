@@ -9,9 +9,9 @@ def create_profile(sender, instance, created, **kwargs):
         user = instance
         profile = Profile.objects.create(
             user=user,
-            name=user.username,
-            surname=user.last_name,
-            email=user.email
+            username=user.username,
+            email=user.email,
+            name=user.first_name,
         )
     return False
 

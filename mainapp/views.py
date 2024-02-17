@@ -8,11 +8,12 @@ def home(request):
     services = Services.objects.all()
     menu_card = Menu.objects.all()
     entertainment_card = Entertainment.objects.all()
+
     context = {
         'services': services,
         'info_slider': info_slider,
         'menu_card': menu_card,
-        'entertainment_card': entertainment_card
+        'entertainment_card': entertainment_card,
     }
     return render(request, 'mainapp/home.html', context)
 

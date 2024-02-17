@@ -44,6 +44,7 @@
   </div>
 
   <!-- SLIDER SECTION -->
+  {% if info_slider %}
   <div class="swiper">
     <div class="swiper-wrapper">
       {% for info_slide in info_slider %}
@@ -54,27 +55,36 @@
       {% endfor %}
     </div>
   </div>
+  {% endif %}
 
   <!-- SERVICES SECTION -->
+  {% if services %}
   <div class="services_title">
     <h2>Каталог Домов</h2>
     {% include 'includes/services.html' with services=services|slice:":6" %}
     <a href="{% url 'service' %}"><h4>Смотреть все...</h4></a>
   </div>
+  {% endif %}
 
    <!-- MENU SECTION -->
+   {% if menu %}
    <div class="services_title">
     <h2>Меню</h2>
     {% include 'includes/menu.html' with services=services|slice:":6" %}
     <a href="{% url 'menu' %}"><h4>Смотреть все...</h4></a>
   </div>
+  {% endif %}
 
+  {% if entertainment %}
    <!-- ENTERTAIMENT SECTION -->
    <div class="services_title">
     <h2>Развлечение на территории</h2>
     {% include 'includes/entertainment.html' with services=services|slice:":6" %}
     <a href="{% url 'service' %}"><h4>Смотреть все...</h4></a>
   </div>
+  {% endif %}
+
+  <!-- COMMENT SECTION -->
 
 </main>
 {% endblock %}

@@ -1,16 +1,53 @@
 {% extends 'mainapp/base.html' %}
 
 {% block content %}
+
+{% if page == 'edit-profile' %}
+
+<div class="wrapper-account">
+    <h1>Редактирование профиля</h1>
+    <div class="account">
+        <form action="{% url 'edit-profile' %}" class="edit__form_profile" method="post" enctype="multipart/form-data">
+            <a href="{% url 'profile' %}"><i class="exit_icon" title="Отменить редактирование">&#10060;</i></a>
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form__field" style="display: flex; align-items: center;">
+                    <label for="formInput#text">{{ field.label }}</label>
+                    {{ field }}
+                </div>
+            {% endfor %}
+
+            <input type="submit" class="btn_submit btn_submit__center" value="Сохранить">
+        </form>
+    </div>
+    <div>
+    </div>
+</div>
+
+
+{% else %}
+
+
 <div class="wrapper-account">
     <h1>Добро пожаловать {{ profile.name }}</h1>
     <div class="account">
         <img src="{{ profile.profile_image.url }}" class="user_img" alt="Изображение пользователя">
+        <i><a href="{% url 'edit-profile' %}">&#128397;</a></i>
         <div class="info--user">
             <ul>
-                <li><span class="text--user">Логин <input class="input_auth" type="text" placeholder="{{ profile.name }}"></span></li>
-                <li><span class="text--user">Имя <input class="input_auth" type="text" placeholder="{{ user.first_name }}"></span></li>
-                <li><span class="text--user">Фамилия <input class="input_auth" type="text" placeholder="{{ profile.surname }}"></span></li>
-                <li><span class="text--user">Email <input class="input_auth" type="email" placeholder="{{ profile.surname }}"></span></li>
+                <li><span class="text--user">Логин: <b>{{ profile.username }}</b></span></li>
+                <li><span class="text--user">Имя: <b>{{ profile.name }}</b></span></li>
+                <li><span class="text--user">Фамилия: <b>{{ profile.surname }}</b></span></li>
+                <li><span class="text--user">Email: <b>{{ profile.email }}</b></span></li>
+                {% if profile.telegram %}
+                <li><span class="text--user">Телеграм: <b>{{ profile.telegram }}</b></span></li>
+                {% endif %}
+                {% if profile.vk %}
+                <li><span class="text--user"> Vk: <b>{{ profile.vk }}</b></span></li>
+                {% endif %}
+                {% if profile.phone %}
+                <li><span class="text--user"> Тел: <b>{{ profile.phone }}</b></span></li>
+                {% endif %}
             </ul>
         </div>
     </div>
@@ -22,6 +59,8 @@
         </form>
     </div>
 </div>
+{% endif %}
+
 {% endblock %}
 
 {% block footer %}{% endblock footer %}

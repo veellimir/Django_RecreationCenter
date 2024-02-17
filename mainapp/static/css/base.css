@@ -93,6 +93,12 @@ button {
   height: 60px;
   margin-bottom: 10px;
 }
+.logo_nav {
+  background-image: url(../mainapp/logo_nav.png);
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+}
 .title_login {
   float: inline-start;
   margin-left: 40px;
@@ -105,6 +111,7 @@ header {
   padding: 30px;
   position: sticky;
   background: #171f21;
+  z-index: 10;
 }
 .active_header {
   position: fixed;
@@ -141,7 +148,7 @@ header {
 .navigation a:hover {color: var(--olive);}
 .user {
   width: 42px;
-  height: auto;
+  height: 42px;
   cursor: pointer;
   margin: 0;
   margin-right: 200px;
@@ -154,17 +161,13 @@ header {
   z-index: 3;
   background: var(--white);
   width: 300px;
-  height: 400px;
+  min-height: 335px;
   right: 100px;
   top: 110px;
   border-radius: 10px;
   text-align: center;
   color: var(--black);
   padding-top: 20px;
-}
-.user-img-modal {
-  height: 45px;
-  border-radius: 23px;
 }
 .settings_user {
   background-image: url(../mainapp/settings.png);
@@ -176,7 +179,11 @@ header {
   right: 20px;
   cursor: pointer;
 }
-.modal_user img {width: 45px;}
+.modal_user img {
+  width: 145px; 
+  height: 145px;   
+  border-radius: 23px;
+}
 .modal_user h4 {
   letter-spacing: 2px;
   font-size: 22px;
@@ -340,9 +347,22 @@ header {
   font-size: 20px;
   cursor: pointer;
 }
+/*=======================
+  COMMENT SECTION
+========================*/
+
+
+
+
+
+
+
+
+
+
 
 /*=======================
-  ABOUT SECTION
+  ABOUT PAGE
 ========================*/
 .wrapper-about img {
   width: 100%;
@@ -412,6 +432,10 @@ header {
   margin: 0 auto;
   border-radius: 12px;
 }
+.account i {
+  cursor: pointer;
+  width: 20px;
+}
 
 .user_img {
   width: 190px;
@@ -421,24 +445,50 @@ header {
   cursor: pointer;
 }
 .info--user {
-  width: 300px; 
+  width: 400px; 
   text-align: left; 
-  padding: 20px;
+  margin: 30px;
 }
 
-.info--user li {margin-top: 10px;}
+.edit__form_profile {
+    width: 67%;
+    padding: 30px;
+    position: relative;
+}
+.exit_icon {
+  position: absolute;
+  right: -100px;
+  top: 10px;
+}
+
+
+.info--user li {margin-bottom: 20px;}
 .text--user {
-  margin-left: 10px;
-  font-size: 20px;
-  font-weight: 600;
-  padding: 10px 0;
+  font-size: 24px;
+  font-weight: 400;
+  padding: 20px 0;
 }
-.text--user input {font-size: 18px; margin-bottom: 10px;}
 
-.text--user input::placeholder {
-  color: var(--blue); 
-  font-weight: 600;
+/* message */
+.wrapper--alert-alert {
+  position: relative;
+  transition: all 3s ease;
+  opacity: 0;
 }
+
+.alert-content {position: absolute;}
+
+.alert {
+  width: 300px;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 6px;
+  color: var(--white);
+  font-size: 18px;
+}
+.alert-error {background: #fc4b0b;}
+.alert-info {background: #359e64; }
+.alert-success {background: #5aa5b9; }
 
 
 

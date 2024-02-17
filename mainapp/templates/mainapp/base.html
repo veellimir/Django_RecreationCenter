@@ -11,15 +11,19 @@
 <body>
    {% include 'includes/navbar.html' %}
 
-    {% if messages %}
+   <div class="wrapper--alert-alert" style="opacity: 0;">
+    <div class="alert-content">
+   {% if messages %}
         {% for msg in messages %}
-        <div>
-            <div class="alert alert">
-                <p>dddddd{{ msg }}</p>
+            <div class="wrapper-alert">
+                <div class="alert alert-{{ msg.tags }}">
+                    <p>{{ msg }}</p>
+                </div>
             </div>
-        </div>
         {% endfor %}
     {% endif %}
+    </div>
+</div>
 
    {% block content %}{% endblock %}
 
