@@ -27,7 +27,7 @@
       {% else %}
           <img src="{% static 'mainapp/user.png' %}" alt="Пользователь">
       {% endif %}
-      <h3>{{ user.profile.name }}</h3>
+      <h3>{{ user.profile.username }}</h3>
       
       <form class="logout" method="post" action="{% url 'logout' %}">
         {% csrf_token %}

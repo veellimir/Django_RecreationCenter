@@ -12,6 +12,7 @@ urlpatterns = [
 
     path('', include('mainapp.urls')),
     path('', include('users.urls')),
+    path('', include('comments.urls')),
 
 
     path('', views.home, name='home'),
