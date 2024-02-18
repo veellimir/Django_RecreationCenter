@@ -1,6 +1,8 @@
 from django.shortcuts import render
 
 from .models import Services, InfoSlider, Menu, Entertainment
+from comments.models import Comments
+from users.models import Profile
 
 
 def home(request):
@@ -8,12 +10,17 @@ def home(request):
     services = Services.objects.all()
     menu_card = Menu.objects.all()
     entertainment_card = Entertainment.objects.all()
+    comments = Comments.objects.all().order_by('-created')
+    profiles = Profile.objects.values_list('profile_image', flat=True)
+    # profiles = Profile.objects.all()
 
     context = {
         'services': services,
         'info_slider': info_slider,
         'menu_card': menu_card,
         'entertainment_card': entertainment_card,
+        'comments': comments,
+        'profiles': profiles
     }
     return render(request, 'mainapp/home.html', context)
 
@@ -38,3 +45,4 @@ def entertainment(request):
 
 def about(request):
     return render(request, 'mainapp/about.html')
+

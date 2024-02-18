@@ -22,7 +22,7 @@
 
   <!-- TITLE SECTION -->
   <div class="wrapper--title-about">
-    <h2>Наши преимущества</h2>
+    <h2 class="title__wrap_h2">Наши преимущества</h2>
     <div class="title_about">
       <div>
         <div class="icon_title png_image_percent"></div>
@@ -60,7 +60,7 @@
   <!-- SERVICES SECTION -->
   {% if services %}
   <div class="services_title">
-    <h2>Каталог Домов</h2>
+    <h2 class="title__wrap_h2">Каталог Домов</h2>
     {% include 'includes/services.html' with services=services|slice:":6" %}
     <a href="{% url 'service' %}"><h4>Смотреть все...</h4></a>
   </div>
@@ -69,7 +69,7 @@
    <!-- MENU SECTION -->
    {% if menu %}
    <div class="services_title">
-    <h2>Меню</h2>
+    <h2 class="title__wrap_h2">Меню</h2>
     {% include 'includes/menu.html' with services=services|slice:":6" %}
     <a href="{% url 'menu' %}"><h4>Смотреть все...</h4></a>
   </div>
@@ -78,13 +78,47 @@
   {% if entertainment %}
    <!-- ENTERTAIMENT SECTION -->
    <div class="services_title">
-    <h2>Развлечение на территории</h2>
+    <h2 class="title__wrap_h2">Развлечение на территории</h2>
     {% include 'includes/entertainment.html' with services=services|slice:":6" %}
     <a href="{% url 'service' %}"><h4>Смотреть все...</h4></a>
   </div>
   {% endif %}
 
-  <!-- COMMENT SECTION -->
+  <!-- COMMENT POST SECTION -->
+  {% if request.user.is_authenticated %}
+  <div class="wrapper-comments">
+    <h2 class="title__wrap_h2">Оставить отзыв</h2>
+
+    <form action="{% url 'comments' %}" method="post" class="comments">
+      {% csrf_token %}
+        <textarea name="user_comments" class="commets_or_user" cols="30" rows="10" required></textarea>
+        <input type="submit" class="btn_submit submit_comments" value="Оставить отзыв" style="text-align: center;">
+    </form>
+  </div>
+  {% else %}
+  <div>
+    <h2 class="comment_negative">Комментарии могут оставлять только <br> зарегестрированые пользователи</h2>
+  </div>
+  {% endif %}
+
+  <!-- COMMENT GET SECTION -->
+  {% if comments %}
+    <div class="wrapper-get-comments">
+      {% for comment in comments %}
+      <div class="wrapper-getComments">
+        <div class="getComments">
+            <img class="user_img__comment" src="{{ comment.owner.profile_image.url }}" alt="Пользователь">
+            <h2>{{ comment.owner }}</h2>
+        </div>
+          <div class="comment_user_text">
+            <p class="comment_commentP">{{ comment.user_comments }}</p>
+            <p class="comment_commentP">{{ comment.created }}</p>
+            <hr>
+          </div>
+      </div>
+      {% endfor %}
+    </div>
+  {% endif %}
 
 </main>
 {% endblock %}
