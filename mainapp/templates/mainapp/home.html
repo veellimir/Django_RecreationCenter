@@ -1,4 +1,8 @@
-{% extends 'mainapp/base.html' %} {% load static %} {% block content %}
+{% extends 'mainapp/base.html' %} 
+
+{% load static %} 
+
+{% block content %}
 <main>
   <!-- CONTENT -->
   <div class="wrapper">
@@ -67,20 +71,20 @@
   {% endif %}
 
    <!-- MENU SECTION -->
-   {% if menu %}
+   {% if menu_card %}
    <div class="services_title">
     <h2 class="title__wrap_h2">Меню</h2>
-    {% include 'includes/menu.html' with services=services|slice:":6" %}
+    {% include 'includes/menu.html' with menu_card=menu_card|slice:":6" %}
     <a href="{% url 'menu' %}"><h4>Смотреть все...</h4></a>
   </div>
   {% endif %}
 
-  {% if entertainment %}
+  {% if entertainment_card %}
    <!-- ENTERTAIMENT SECTION -->
    <div class="services_title">
     <h2 class="title__wrap_h2">Развлечение на территории</h2>
     {% include 'includes/entertainment.html' with services=services|slice:":6" %}
-    <a href="{% url 'service' %}"><h4>Смотреть все...</h4></a>
+    <a href="{% url 'entertainment' %}"><h4>Смотреть все...</h4></a>
   </div>
   {% endif %}
 
@@ -113,7 +117,7 @@
           <div class="comment_user_text">
             <p class="comment_commentP">{{ comment.user_comments }}</p>
             <p class="comment_commentP">{{ comment.created }}</p>
-            <hr>
+            <!-- <hr> -->
           </div>
       </div>
       {% endfor %}

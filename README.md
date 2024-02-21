@@ -17,17 +17,17 @@
 <hr>
 
 
-<h3 align="center" style="color: #359e64;">The stack used:</h3>
+<h3 align="center" style="color: green;">The stack used:</h3>
 
-<div align="center" style="background-color: #ffffff; padding: 20px; border-radius: 5px;">
+<div align="center" style="background-color: white; padding: 20px; border-radius: 5px;">
 
-<b><p style="color: #17181d;">Python 3.10;</p></b>
-<b><p style="color: #17181d;">SqLite3;</p></b>
-<b><p style="color: #17181d;">JavaScript;</p></b>
-<b><p style="color: #17181d;">Html;</p></b>
-<b><p style="color: #17181d;">Css;</p></b>
-<b><p style="color: #17181d;">Django;</p></b>
-<b><p style="color: #17181d;">Swiper-slider;</p></b>
+<b><p style="color: black;">Python 3.10;</p></b>
+<b><p style="color: black;">SqLite3;</p></b>
+<b><p style="color: black;">JavaScript;</p></b>
+<b><p style="color: black;">Html;</p></b>
+<b><p style="color: black;">Css;</p></b>
+<b><p style="color: black;">Django;</p></b>
+<b><p style="color: black;">Swiper-slider;</p></b>
 
 </div>
 
@@ -57,17 +57,23 @@
    :white_check_mark: Модель для слайдера<br>
    :white_check_mark: Страница профиля (<b>Необходимо войти в ЛК</b>)<br>
    :white_check_mark: Комментарии к сайту (<b>Необходимо войти в ЛК</b>)<br>
+   :white_check_mark: Адаптация до 350px<br>
    :white_check_mark: Добавление домов через админ панель (<b>Необходимо войти в Админ-панель</b>)<br>
    :white_check_mark: Добавление меню через админ панель (<b>Необходимо войти в Админ-панель</b>)<br>
    :white_check_mark: Добавление развлечений через админ панель (<b>Необходимо войти в Админ-панель</b>)<br>
    :white_check_mark: Добавление контента в слайдер через админ панель (<b>Необходимо войти в Админ-панель</b>)<br>
-   <hr>   
+   :white_check_mark: Поиск Товаров и Услуг<br>
+   
+<hr>   
 
    <h4>Works:</h4>
 
    :black_square_button: Модерация комментариев<br>
+   :black_square_button: Мобильное меню<br>
+   :black_square_button: Погода<br>
+   :black_square_button: Динамические страницы<br>
 
-    <hr>
+<hr>
 
    <h4>Not ready:</h4>
    :negative_squared_cross_mark: Доступ персонала<br>

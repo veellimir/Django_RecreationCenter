@@ -84,6 +84,7 @@ def edit_profile(request):
         if form.is_valid():
             form.save()
 
+            messages.info(request, f'Профиль {profile} успешно изменен')
             return redirect('profile')
 
     context = {'page': page, 'form': form}
