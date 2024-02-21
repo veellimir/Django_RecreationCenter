@@ -19,6 +19,7 @@ urlpatterns = [
     path('services/', views.service, name='service'),
     path('menu/', views.menu, name='menu'),
     path('entertainment/', views.entertainment, name='entertainment'),
+    path('cards_page/<str:pk>/', views.cards_page, name='cards_page'),
     path('about/', views.about, name='about'),
 ]
 if settings.DEBUG:

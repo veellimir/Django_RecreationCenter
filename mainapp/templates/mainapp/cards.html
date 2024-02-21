@@ -1,0 +1,16 @@
+{% extends 'mainapp/base.html' %} 
+
+
+{% block content %}
+<main>
+    <section class="wrapper-card">
+        <div class="card">
+            <img src="{{ services.feature_image.url }}" alt="Турбаза recretion center for vikings">
+            <div class="content_">
+                <h1>{{ services.title }}</h1>
+                <p>{{ services.description }}</p>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
