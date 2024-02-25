@@ -14,13 +14,13 @@ urlpatterns = [
     path('', include('users.urls')),
     path('', include('comments.urls')),
 
-
     path('', views.home, name='home'),
     path('services/', views.service, name='service'),
     path('menu/', views.menu, name='menu'),
     path('entertainment/', views.entertainment, name='entertainment'),
-    path('cards_page/<str:pk>/', views.cards_page, name='cards_page'),
     path('about/', views.about, name='about'),
+
+    path('cards_page/<str:pk>/<str:card_type>/', views.cards_page, name='cards_page'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

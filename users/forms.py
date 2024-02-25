@@ -9,16 +9,16 @@ class CustomUserRegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields = [
-            'first_name',
-            'email',
+            # 'first_name',
+            # 'email',
             'username',
             'password1',
             'password2'
         ]
 
         labels = {
-            'first_name': 'Имя',
-            'email': 'Email',
+            # 'first_name': 'Имя',
+            # 'email': 'Email',
             'username': 'Логин',
             'password1': 'Пароль',
             'password2': 'Повторить пароль'
@@ -38,7 +38,8 @@ class ProfileForm(ModelForm):
             'username',
             'name',
             'surname',
-            'email', 'profile_image',
+            'email',
+            'profile_image',
             'telegram',
             'vk'
         ]

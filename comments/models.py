@@ -10,3 +10,6 @@ class Comments(models.Model):
 
     def __str__(self):
         return self.user_comments
+
+    class Meta:
+        unique_together = ['owner']

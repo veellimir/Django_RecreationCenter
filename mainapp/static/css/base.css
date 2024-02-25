@@ -293,7 +293,6 @@ header {
   SERVICES CARD INCLUDE
 ========================*/
 .wrapper-section_card {
-  background: var(--btn_positive); 
   padding: 20px;
   min-height: 670px;
 }
@@ -348,6 +347,35 @@ header {
 }
 
 /*=======================
+  PAGINATIONS SECTION
+========================*/
+.pagination,
+.pagination li {margin: 0;}
+
+.wrapper-pagination,
+.pagination a {display: flex;justify-content: center;}
+
+.pagination {display: flex;}
+
+.pagination a {
+  color: var(--blue);
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--blue);
+  border-radius: 4px;
+  background: var(--white);
+  align-items: center;
+  cursor: pointer;
+  margin: 0 1px 20px 0;
+}
+.btn--sub {
+  background: var(--blue) !important;
+  color: var(--white) !important;
+} 
+
+
+/*=======================
   SEARCH CARD
 ========================*/
 .btn_search,
@@ -383,42 +411,84 @@ header {
 .btn_search {width: 127px; height: 42px;}
 
 
+/*=======================
+  ALL CARD <INT:PK>
+========================*/
+.card_card_img_btn,
+.card_img,
+.content_description,
+.buy_pages__card {margin: 0;}
 
+.wrapper-card {margin: 50px;}
+.card {
+  display: flex;
+  justify-content: space-evenly;
+}
+.card_img {
+  width: 500px;
+  height: 700px; 
+  cursor: pointer; 
+  object-fit: cover;
+}
 
+.content_description {
+  width: 40%;
+  min-width: 500px;
+  position: relative;
+  color: var(--white);
+}
+.content_description p {
+  margin: 30px 30px 30px 0; 
+  font-size: 20px;
+  height: 80%;
+  max-height: 495px;
+  overflow: auto;
+}
+.buy_pages__card {position: absolute;bottom: 0;cursor: pointer;}
+.content_description h3 {margin-top: 20px;}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.content_description p::-webkit-scrollbar {
+  width: 5px;
+  background: var(--white);
+}
+.content_description p::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: var(--blue);
+}
+.content_description p::-moz-scrollbar {
+  width: 5px;
+  background: var(--white);
+}
+.content_description p::-moz-scrollbar-thumb {
+  background: var(--blue);
+  border-radius: 5px;
+}
+.content_description p::-ms-scrollbar {
+  width: 5px;
+  background: var(--white);
+}
+.content_description p::-ms-scrollbar-thumb {
+  background: var(--blue);
+  border-radius: 5px;
+}
 
 
 /*=======================
-  SERVICES CARD <INT:PK>
+  MAP SECTION
 ========================*/
-.wrapper-card {
-
+.wrapper-map {
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  margin: 50px 50px 100px;
 }
-.card {
-  
+.map_description {
+  width: 40%;
+  font-size: 30px;
+  padding: 20px;
+  border-bottom: 7px solid var(--blue);
+  border-top: 7px solid var(--blue);
 }
-
-
-
 
 
 
@@ -491,7 +561,7 @@ header {
   text-align: left;
   width: 45%;
   padding: 10px;
-  border-bottom: 2px solid var(--blue);
+  border-top: 2px solid var(--blue);
 }
 .getComments {
   display: flex;
