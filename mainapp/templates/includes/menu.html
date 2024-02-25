@@ -2,7 +2,7 @@
     <div class="wrapper--section-services">
       {% for menu in menu_card %}
       <div class="services_card">
-        <img src="{{ menu.feature_image.url }}" alt="турбаза" />
+        <a href="{% url 'cards_page' pk=menu.pk card_type='menu' %}"><img src="{{ menu.feature_image.url }}" alt="турбаза" /></a>
         <div class="card_title">
           <h3>{{ menu.title }}</h3>
           <p>От {{ menu.price }} к </p>
@@ -11,3 +11,6 @@
       {% endfor %}
     </div>
 </section>
+
+<!-- Pagination -->
+{% include 'includes/pagination.html' with queryset=menu_card %}

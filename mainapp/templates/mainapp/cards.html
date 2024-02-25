@@ -5,10 +5,12 @@
 <main>
     <section class="wrapper-card">
         <div class="card">
-            <img src="{{ services.feature_image.url }}" alt="Турбаза recretion center for vikings">
-            <div class="content_">
-                <h1>{{ services.title }}</h1>
-                <p>{{ services.description }}</p>
+            <img src="{{ card.feature_image.url }}" class="card_img" alt="Турбаза recretion center for vikings">
+            <div class="content_description">
+                <h1>{{ card.title }}</h1>
+                <h3>Цена {{ card.price }} к</h3>
+                <p>{{ card.description }}</p>
+                <button class="btn_buy buy_pages__card">Забронировать</button>
             </div>
         </div>
     </section>
