@@ -1,0 +1,16 @@
+{% extends 'mainapp/base.html' %} 
+
+{% block content %}
+<main>
+    <h1 class="title__wrap_h2 title_chat">Сообщения</h1>
+    <div class="wrapper-messages">
+       <div class="wrapper-chat">
+            <h2>Сообщения: </h2><p><br> {{ message.body_msg|linebreaksbr }}</p>
+            <h2>Отправитель:  <span>{{ message.name }}</span></h2>
+            <h2>Email: <span>{{ message.email }}</span></h2>
+            <h2>Телеграм: <span>{{ message.telegram }}</span></h2>
+            <h2>Дата отправки: <span>{{ message.created }}</span></h2>
+       </div>
+    </div>
+</main>
+{% endblock %}

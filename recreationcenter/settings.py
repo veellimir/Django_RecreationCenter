@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     'mainapp.apps.MainappConfig',
     'users.apps.UsersConfig',
     'comments.apps.CommentsConfig',
+    'appeal.apps.AppealConfig',
 ]
 
 MIDDLEWARE = [

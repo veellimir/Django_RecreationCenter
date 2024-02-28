@@ -13,7 +13,6 @@
       <li><a href="{% url 'about' %}">О нас</a></li>
     </ul>
     {% if request.user.is_authenticated %}
-
       {% if user.profile.profile_image.url %}
           <img class="user" src="{{ user.profile.profile_image.url }}" alt="Пользователь">
       {% else %}
@@ -28,7 +27,17 @@
           <img src="{% static 'mainapp/user.png' %}" alt="Пользователь">
       {% endif %}
       <h3>{{ user.profile.username }}</h3>
-      
+
+      {% if request.user.is_authenticated %}
+
+        {% if request.user.is_superuser %}
+        <button class="btn_submit personal_btn"><a href="{% url 'appeal' %}" class="personal_btn">Мои сообщения</a></button>
+        {% elif not request.user.is_superuser %}
+        <button class="btn_submit personal_btn"><a href="{% url 'appeal' %}" class="personal_btn">Чат поддержки</a></button>
+        {% endif %}
+
+      {% endif %}
+
       <form class="logout" method="post" action="{% url 'logout' %}">
         {% csrf_token %}
         <button class="btn_submit">Выйти</button>

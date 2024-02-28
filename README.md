@@ -62,19 +62,20 @@
    :white_check_mark: Добавление меню через админ панель (<b>Необходимо войти в Админ-панель</b>)<br>
    :white_check_mark: Добавление развлечений через админ панель (<b>Необходимо войти в Админ-панель</b>)<br>
    :white_check_mark: Добавление контента в слайдер через админ панель (<b>Необходимо войти в Админ-панель</b>)<br>
-   :white_check_mark: Поиск Товаров и Услуг<br>
+   :white_check_mark: Динамический Поиск Товаров и Услуг<br>
    :white_check_mark: Динамические страницы Товаров и Услуг<br>
+   :white_check_mark: Динамическая Пагинация<br>
    :white_check_mark: Месторасположение на ЯКарте<br>
-   :white_check_mark: Пагинация<br>
-   
+
 <hr>   
 
    <h4>Works:</h4>
 
    :black_square_button: Модерация комментариев<br>
    :black_square_button: Мобильное меню<br>
-   :black_square_button: Погода<br>
-   :black_square_button: Адаптация до 350px<br>
+   :black_square_button: Адаптация всех страниц до 350px<br>
+   :black_square_button: Форма поддержки на сайт<br>
+   :black_square_button: Телебот (Доступен по прибытию на место)<br>
 
 <hr>
 
@@ -82,6 +83,5 @@
    :negative_squared_cross_mark: Доступ персонала<br>
    :negative_squared_cross_mark: Бронирование домов<br>
    :negative_squared_cross_mark: Погода<br>
-   :negative_squared_cross_mark: Чат поддержки<br>
    :negative_squared_cross_mark: Открытие новых возможностей по прибытию пользователя<br>
    <hr>

@@ -78,7 +78,6 @@ def pagination(request, items, result):
     """
 
     page = request.GET.get('page')
-    # result = 4
     paginator = Paginator(items, result)
 
     try:
