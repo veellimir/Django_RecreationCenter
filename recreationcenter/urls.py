@@ -13,6 +13,7 @@ urlpatterns = [
     path('', include('mainapp.urls')),
     path('', include('users.urls')),
     path('', include('comments.urls')),
+    path('', include('appeal.urls')),
 
     path('', views.home, name='home'),
     path('services/', views.service, name='service'),
