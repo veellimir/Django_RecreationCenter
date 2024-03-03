@@ -104,19 +104,18 @@
 
   <!-- COMMENT POST SECTION -->
   {% if request.user.is_authenticated %}
-    {% if not comments %}
-    <div class="wrapper-comments">
-      <h2 class="title__wrap_h2">Оставить отзыв</h2>
-
-      <form action="{% url 'comments' %}" method="post" class="comments">
-        {% csrf_token %}
-          <textarea name="user_comments" class="commets_or_user" cols="30" rows="10" required></textarea>
-          <input type="submit" class="btn_submit submit_comments" value="Оставить отзыв" style="text-align: center;">
-      </form>
-    </div>
-    {% else %}
-    <h2 class="comment_negative">Вы уже оставили комментарий</h2>
-    {% endif %}
+      {% if not existing_comment %}
+        <div class="wrapper-comments">
+          <h2 class="title__wrap_h2">Оставить отзыв</h2>
+          <form action="{% url 'comments' %}" method="post" class="comments">
+            {% csrf_token %}
+              <textarea name="user_comments" class="commets_or_user" cols="30" rows="10" required></textarea>
+              <input type="submit" class="btn_submit submit_comments" value="Оставить отзыв" style="text-align: center;">
+          </form>
+        </div>
+        {% else %}
+          <h2 class="comment_negative">Вы уже оставили комментарий</h2>
+        {% endif %}
   {% else %}
   <div>
     <h2 class="comment_negative">Комментарии могут оставлять только <br> зарегистрированые пользователи</h2>

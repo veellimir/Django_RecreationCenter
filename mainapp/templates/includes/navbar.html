@@ -2,6 +2,7 @@
 
 <header>
   <nav class="navigation">
+    <div class="exit_modal">x</div>
     <a href="{% url 'home' %}">
       <div class="logo_nav"></div>
     </a>
@@ -15,6 +16,7 @@
     {% if request.user.is_authenticated %}
       {% if user.profile.profile_image.url %}
           <img class="user" src="{{ user.profile.profile_image.url }}" alt="Пользователь">
+          <a href="{% url 'profile' %}"><img class="user_modile" src="{{ user.profile.profile_image.url }}" alt="Пользователь"></a>
       {% else %}
           <img class="user" src="{% static 'mainapp/user.png' %}" alt="Пользователь">
       {% endif %}
@@ -28,16 +30,6 @@
       {% endif %}
       <h3>{{ user.profile.username }}</h3>
 
-      {% if request.user.is_authenticated %}
-
-        {% if request.user.is_superuser %}
-        <button class="btn_submit personal_btn"><a href="{% url 'appeal' %}" class="personal_btn">Мои сообщения</a></button>
-        {% elif not request.user.is_superuser %}
-        <button class="btn_submit personal_btn"><a href="{% url 'appeal' %}" class="personal_btn">Чат поддержки</a></button>
-        {% endif %}
-
-      {% endif %}
-
       <form class="logout" method="post" action="{% url 'logout' %}">
         {% csrf_token %}
         <button class="btn_submit">Выйти</button>
@@ -47,9 +39,13 @@
     <a href="{% url 'login' %}">
       <img class="user" src="{% static 'mainapp/user.png' %}" alt="Войти" />
     </a>
+    <a href="{% url 'login' %}">
+      <img class="user_modile" src="{% static 'mainapp/user.png' %}" alt="Войти" />
+    </a>
     {% endif %}
   </nav>
 </header>
+<div class="backround-modile-menu"></div>
 <div class="wrapper-burger">
   <img src="{% static 'mainapp/burger.png' %}" alt="меню" />
 </div>
