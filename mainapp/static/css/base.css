@@ -141,7 +141,7 @@ header {
   cursor: pointer;
 }
 .navigation a:hover {color: var(--olive);}
-.user {
+.user, .user_modile {
   width: 42px;
   height: 42px;
   cursor: pointer;
@@ -149,6 +149,7 @@ header {
   margin-right: 200px;
   border-radius: 56px 
 }
+.user_modile {display: none;}
 .wrapper-burger {display: none;}
 
 .modal_user {
@@ -190,6 +191,26 @@ header {
   text-align: center;
 }
 .personal_btn:hover {color: white !important;}
+.backround-modile-menu {
+  background: #17181d71; 
+  width: 100%; 
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 1;
+}
+.exit_modal {
+  position: absolute;
+  right: 0;
+  font-size: 45px;
+  color: var(--white);
+  cursor: pointer;
+  right: 24px;
+  top: 7px;
+  display: none;
+}
 
 /*=======================
   Main Section
@@ -699,52 +720,6 @@ header {
 .alert-success {background: #5aa5b9; }
 
 
-/*=======================
-  APPEALS PAGE
-========================*/
-.title_chat {text-align: center;}
-
-.wrapper-messages {
-  min-height: 800px;
-  margin-top: 20px;
-}
-.message--unread {
-  background: var(--white) !important;
-  color: var(--black) !important;
-}
-.message {
-  width: 70%;
-  max-width: 1200px;
-  height: 80px;
-  background: rgb(173, 171, 171);
-  cursor: pointer;
-  color: var(--white);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 20px;
-  border-radius: 3px;
-  margin-bottom: 5px;
-}
-.wrapper-chat {
-  width: 50%;
-  background: var(--white);
-  min-height: 300px;
-  border-radius: 3px;
-  height: auto;
-  padding: 20px;
-}
-.wrapper-chat p {
-  border-bottom: 1px solid var(--blue);
-  padding-bottom: 5px;
-}
-.wrapper-chat h2 {
-  font-size: 19px;
-  line-height: 20px;
-  margin-top: 10px;
-  font-weight: 400;
-  color: var(--btn_positive);
-}
 
 
 
@@ -815,13 +790,16 @@ footer {
     height: 100vh;
     display: none;
     z-index: 2;
+    top: 0;
   }
+  .exit_modal {display: block;}
   .wrapper-burger {
-    position: absolute;
+    position: fixed;
     display: block;
     z-index: 1;
     margin: 20px 10px;
     cursor: pointer;
+    top: 0;
   }
   .wrapper-burger img {width: 60px;}
   .navigation,
@@ -832,12 +810,14 @@ footer {
     margin: 30px 0;
   }
   .navigation li {margin: 10px 0;}
-  .user {margin-right: 0;}
+  .user {display: none;}
+  .user_modile {display: flex; margin-right: 0;}
   .commets_or_user {height: 200px; width: 85%;}
   .title_about p {margin: 10px 0 10px 0; font-size: 18px;}
   .title__wrap_h2 {margin-bottom: 20px;}
   .wrapper--title-about {margin: 30px;}
   .title_about {display: inline-block; padding: 10px;}
+  .wrapper-account {margin-top: 80px;}
 }
 @media screen and (max-width: 800px) {
   .comment_commentP {padding: 0; margin: 21px;}
@@ -846,6 +826,30 @@ footer {
   .services_card, 
   .services_card img {width: 250px;height: 300px;}
   .btn_buy {width: 250px;}
+  .account {
+    width: 300px; 
+    display: block; 
+    height: auto;
+    padding: 10px;
+  }
+  .text--user {font-size: 19px; }
+  .text--user b {width: 50px;}
+  .user_img {width: 120px; height: 120px;}
+  .info--user {
+    width: 155px; 
+    text-align: center;
+    margin: 0 auto;
+  }
+  .account a {position: absolute;}
+  .exit_icon {top: -20px; right: -128px;}
+  .form__field {flex-direction: column;}
+  .btn_submit {width: 120px;}
+  .edit__form_profile {width: 90%;}
+  .map_description {width: 500px; font-size: 20px;}
+  .map_description {
+    border-top: 3px solid var(--blue);
+    border-bottom: 3px solid var(--blue);
+  }
 }
 @media screen and (max-width: 620px) {
   .wrapper h1 {

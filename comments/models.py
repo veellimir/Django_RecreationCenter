@@ -13,3 +13,7 @@ class Comments(models.Model):
 
     class Meta:
         unique_together = ['owner']
+        verbose_name = 'комментарий'
+        verbose_name_plural = 'Комментарии'
+
+

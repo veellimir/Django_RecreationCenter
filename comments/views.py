@@ -20,10 +20,14 @@ def comment_user(request):
             comments.owner = profile
             comments.save()
             messages.info(request, 'Благодарим за Ваш комментарий')
+            print(comments.owner)
+            print(comments)
+            print(existing_comment)
             return redirect('home')
 
     context = {
         'form': form,
         'existing_comment': existing_comment,
+        'profile': profile
     }
     return render(request, 'mainapp/home.html', context)

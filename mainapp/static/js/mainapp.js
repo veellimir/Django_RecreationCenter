@@ -99,3 +99,23 @@ if (searchForm) {
     })
   }
 }    
+
+// Header mobile
+const menuMobile = document.querySelector('.wrapper-burger'),
+      headerMobile = document.querySelector('header'),
+      backroundMenu = document.querySelector('.backround-modile-menu'),
+      exitBtn = document.querySelector('.exit_modal');
+
+
+      menuMobile.addEventListener('click', () => {
+        headerMobile.style.display = 'block';
+        backroundMenu.style.display = 'block';
+      })
+      function hideHeaderAndBackground() {
+        headerMobile.style.display = 'none';
+        backroundMenu.style.display = 'none';
+    }
+    
+    backroundMenu.addEventListener('click', hideHeaderAndBackground);
+    exitBtn.addEventListener('click', hideHeaderAndBackground);
+    
