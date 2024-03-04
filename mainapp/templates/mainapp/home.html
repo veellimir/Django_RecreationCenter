@@ -103,13 +103,22 @@
  </aside>
 
   <!-- COMMENT POST SECTION -->
-  {% if request.user.is_authenticated %}
+  <div class="wrapper-post_comments">
+    <div class="wrapper_description_commets">
+      <p>
+        Пожалуйста, оставьте свой отзыв о нашем сайте ниже. Мы ценим каждое ваше слово и 
+        стремимся сделать наш сервис лучше для Вас. Ваши отзывы помогают нам понять, что мы 
+        делаем правильно, а что можно улучшить, чтобы обеспечить вам лучший опыт использования 
+        нашего сервиса.
+      </p>
+    </div>
+    {% if request.user.is_authenticated %}
       {% if not existing_comment %}
         <div class="wrapper-comments">
           <h2 class="title__wrap_h2">Оставить отзыв</h2>
           <form action="{% url 'comments' %}" method="post" class="comments">
             {% csrf_token %}
-              <textarea name="user_comments" class="commets_or_user" cols="30" rows="10" required></textarea>
+              <textarea name="user_comments" class="commets_or_user" cols="30" rows="10" required maxlength="400"></textarea>
               <input type="submit" class="btn_submit submit_comments" value="Оставить отзыв" style="text-align: center;">
           </form>
         </div>
@@ -121,24 +130,44 @@
     <h2 class="comment_negative">Комментарии могут оставлять только <br> зарегистрированые пользователи</h2>
   </div>
   {% endif %}
+  </div>
 
-  <!-- COMMENT GET SECTION -->
-  {% if comments %}
-    <div class="wrapper-get-comments">
-      {% for comment in comments %}
-      <div class="wrapper-getComments">
-        <div class="getComments">
+
+<!-- COMMENT GET SECTION -->
+{% if comments %}
+  <section class="wrapper-slider_comments">
+    <div class="content">
+      <div class="swiper-comment">
+        <div class="swiper-wrapper">
+          {% for comment in comments %}
+          <div class="swiper-slide slide_comments">
             <img class="user_img__comment" src="{{ comment.owner.profile_image.url }}" alt="Пользователь">
-            <h2>{{ comment.owner }}</h2>
-        </div>
-          <div class="comment_user_text">
-            <p class="comment_commentP">{{ comment.user_comments }}</p>
-            <p class="comment_commentP">{{ comment.created }}</p>
-            <!-- <hr> -->
+            <div class="overlay">
+              <h2>{{ comment.owner }}</h2>
+            </div>
+            <div class="comment_users">
+              <p class="comment_commentP commentPabstop">{{ comment.user_comments }}</p>
+              <p class="comment_commentP commentPabsbott">{{ comment.created }}</p>
+            </div>
           </div>
+          {% endfor %}
+          </div>
+        </div>
       </div>
-      {% endfor %}
-    </div>
+
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </section>
   {% endif %}
 
 </main>

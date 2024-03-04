@@ -12,8 +12,10 @@ class Comments(models.Model):
         return self.user_comments
 
     class Meta:
+        ordering = ['-created']
         unique_together = ['owner']
         verbose_name = 'комментарий'
         verbose_name_plural = 'Комментарии'
+
 
 

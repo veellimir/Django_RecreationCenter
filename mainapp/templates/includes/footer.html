@@ -1,3 +1,29 @@
 <footer>
-    
+    <div class="wrapper-title_footer">
+        <a href="{% url 'home' %}">
+            <div class="logo_nav"></div>
+          </a>
+        <h4>Recreation Center for <b>Vikings</b></h4> 
+        <a href="{% url 'about' %}"><button class="btn_about__footer">О нас</button></a>
+    </div>
+    <div class="wrapper-footer">
+        <div class="footer__social">
+            <a href="https://t.me/Pa_0tel" target="_blank"><div class="tegelram"></div></a>
+            <a href="https://vk.com/novgorodknyaz" target="_blank"><div class="vk"></div></a>
+        </div>
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="{% url 'home' %}">Главная</a></li>
+                <li><a href="{% url 'menu' %}">Меню</a></li>
+                <li><a href="{% url 'service' %}">Дома и цены</a></li>
+                <li><a href="{% url 'entertainment' %}">Развлечение</a></li>
+                <li><a href="{% url 'about' %}">О нас</a></li>
+            </ul>
+        </nav>
+        <div class="wrapper-address">
+            <ul>
+                <li><a href="https://yandex.ru/maps/?from=mapframe&ll=49.258495%2C53.354362&mode=whatshere&source=mapframe&um=constructor%3A32dd914862915db1239dfb3c1e7718132311e64e6a4955449ffd66a6fc71a493&utm_source=mapframe&whatshere%5Bpoint%5D=49.257124%2C53.354744&whatshere%5Bzoom%5D=18.03&z=18.03" target="_blank">10-й проезд, 1В, СНТ Нива-2, <br> сельское поселение Жигули, <br> Самарская область</a></li>
+            </ul>
+        </div>
+    </div>
 </footer>

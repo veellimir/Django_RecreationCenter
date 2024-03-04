@@ -119,3 +119,15 @@ const menuMobile = document.querySelector('.wrapper-burger'),
     backroundMenu.addEventListener('click', hideHeaderAndBackground);
     exitBtn.addEventListener('click', hideHeaderAndBackground);
     
+
+    var swiperComment = new Swiper(".swiper-comment", {
+      effect: "cards",
+      grabCursor: true,
+      initialSlide: 2,
+      speed: 500,
+      loop: true,
+      rotate: true,
+      mousewheel: {
+      invert: false,
+    },
+  });
