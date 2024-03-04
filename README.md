@@ -45,6 +45,7 @@ for Windows: <br>
 <b><p style="color: black;">Pillow;</p></b>
 <b><p style="color: black;">SqLite3;</p></b>
 <b><p style="color: black;">YandexMap;</p></b>
+<b><p style="color: black;">Card Effect;</p></b>
 <b><p style="color: black;">Swiper-slider;</p></b>
 
 </div>
