@@ -1,0 +1,37 @@
+:root {
+    --black: #17181d;
+    --white: #fff;
+    --green: #171f21;
+    --blue: #05485b;
+    --olive: #808040;
+  
+    --form_color: #bed2d8;
+    --input_color: rgb(171, 171, 71);
+    --input_warning: rgba(139, 189, 136, 0.702);
+  
+    --btn_positive: #4e6064;
+  
+    --positive_feedback: #359e64;
+  
+    --vikings: "Noto Sans Runic", sans-serif;
+  }
+  #icon-moon {display: none;}
+  body,
+  #nav-sidebar,
+  .paginator,
+  .form-row,
+  .vLargeTextField,
+  #id_tags {
+    background: var(--green);
+  }
+
+  #header, 
+  #content-main caption, 
+  .breadcrumbs, 
+  .current-app caption,
+  input {
+    background: var(--blue) !important;
+  }
+
+#id_feature_image {background: transparent !important;}
+#site-name a {color: var(--white) !important;}

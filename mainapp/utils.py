@@ -1,5 +1,7 @@
 from django.db.models import Q
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django import forms
+from django.utils.safestring import mark_safe
 
 from .models import Services, Menu, Entertainment
 
@@ -100,3 +102,30 @@ def pagination(request, items, result):
 
     custom_range = range(left_index, right_index)
     return custom_range, items
+
+
+def dynamic_models(md):
+    """
+    function for dynamic models
+
+    params:
+    get_models = model
+    """
+    class Meta:
+        model = md
+        fields = '__all__'
+
+    return type(f"{md.__name__}Form", (forms.ModelForm,), {'Meta': Meta})
+
+
+def get_admin_options():
+    fields = ('title', 'feature_image', 'html_img', 'description', 'price')
+    readonly_fields = ('html_img',)
+    list_display = ('title', 'price', 'html_img')
+    search_fields = ('title', 'price')
+    return fields, readonly_fields, list_display, search_fields
+
+
+def html_img(self, img):
+    if img.feature_image:
+        return mark_safe(f'<img src="{img.feature_image.url}" width="100">')

@@ -11,12 +11,20 @@
             <a href="{% url 'profile' %}"><i class="exit_icon" title="Отменить редактирование">&#10060;</i></a>
             {% csrf_token %}
             {% for field in form %}
-                <div class="form__field" style="display: flex; align-items: center;">
-                    <label for="formInput#text">{{ field.label }}</label>
-                    {{ field }}
-                </div>
+                {% if field.name == 'profile_image' %}
+                    <div class="form__field" style="display: flex; align-items: center;">
+                        {% if form.instance.profile_image %}
+                            <img src="{{ form.instance.profile_image.url }}" alt="Изображение профиля" width="100">
+                        {% endif %}
+                        {{ field }}
+                    </div>
+                {% else %}
+                    <div class="form__field" style="display: flex; align-items: center;">
+                        <label for="formInput#text">{{ field.label }}</label>
+                        {{ field }}
+                    </div>
+                {% endif %}
             {% endfor %}
-
             <input type="submit" class="btn_submit btn_submit__center" value="Сохранить">
         </form>
     </div>
