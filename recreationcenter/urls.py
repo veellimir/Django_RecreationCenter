@@ -14,6 +14,8 @@ urlpatterns = [
     path('', include('users.urls')),
     path('', include('comments.urls')),
 
+    path('captcha/', include('captcha.urls')),
+
     path('', views.home, name='home'),
     path('services/', views.service, name='service'),
     path('menu/', views.menu, name='menu'),

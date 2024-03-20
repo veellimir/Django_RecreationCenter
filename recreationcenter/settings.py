@@ -18,6 +18,9 @@ INSTALLED_APPS = [
     'mainapp.apps.MainappConfig',
     'users.apps.UsersConfig',
     'comments.apps.CommentsConfig',
+    'support.apps.SupportConfig',
+
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -35,7 +38,7 @@ ROOT_URLCONF = 'recreationcenter.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

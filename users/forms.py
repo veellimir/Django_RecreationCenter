@@ -1,11 +1,14 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.forms import ModelForm
+from captcha.fields import CaptchaField
 
 from .models import Profile
 
 
 class CustomUserRegisterForm(UserCreationForm):
+    captcha = CaptchaField()
+
     class Meta:
         model = User
         fields = [
@@ -49,7 +52,7 @@ class ProfileForm(ModelForm):
             'name': 'Имя',
             'surname': 'Фамилия',
             'email': 'Email',
-            'profile_image': 'Изображение профиля',
+            'profile_image': '',
             'telegram': 'Телеграм',
             'vk': 'ВКонтакте',
         }

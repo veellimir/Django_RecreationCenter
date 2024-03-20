@@ -34,7 +34,7 @@
       </div>
       <div>
         <div class="icon_title png_image_rest"></div>
-        <p>Более пяти тысяч мест для отдыха</p>
+        <p>Более двухсот мест для отдыха</p>
       </div>
       <div>
         <div class="icon_title png_image_reservations"></div>
@@ -107,13 +107,12 @@
     <div class="wrapper_description_commets">
       <p>
         Пожалуйста, оставьте свой отзыв о нашем сайте ниже. Мы ценим каждое ваше слово и 
-        стремимся сделать наш сервис лучше для Вас. Ваши отзывы помогают нам понять, что мы 
+        стремимся сделать наш сервис лучше для вас. Ваши отзывы помогают нам понять, что мы 
         делаем правильно, а что можно улучшить, чтобы обеспечить вам лучший опыт использования 
         нашего сервиса.
       </p>
     </div>
     {% if request.user.is_authenticated %}
-      {% if not existing_comment %}
         <div class="wrapper-comments">
           <h2 class="title__wrap_h2">Оставить отзыв</h2>
           <form action="{% url 'comments' %}" method="post" class="comments">
@@ -123,9 +122,6 @@
           </form>
         </div>
         {% else %}
-          <h2 class="comment_negative">Вы уже оставили комментарий</h2>
-        {% endif %}
-  {% else %}
   <div>
     <h2 class="comment_negative">Комментарии могут оставлять только <br> зарегистрированые пользователи</h2>
   </div>
@@ -143,7 +139,7 @@
           <div class="swiper-slide slide_comments">
             <img class="user_img__comment" src="{{ comment.owner.profile_image.url }}" alt="Пользователь">
             <div class="overlay">
-              <h2>{{ comment.owner }}</h2>
+              <h2>от {{ comment.owner }}</h2>
             </div>
             <div class="comment_users">
               <p class="comment_commentP commentPabstop">{{ comment.user_comments }}</p>
@@ -155,7 +151,7 @@
         </div>
       </div>
 
-    <ul class="circles">
+    <!-- <ul class="circles">
       <li></li>
       <li></li>
       <li></li>
@@ -166,7 +162,7 @@
       <li></li>
       <li></li>
       <li></li>
-    </ul>
+    </ul> -->
   </section>
   {% endif %}
 

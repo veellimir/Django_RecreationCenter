@@ -74,7 +74,7 @@ def profile(request):
 def edit_profile(request):
     """the function references the same page profile.html"""
     page = 'edit-profile'
-    form = CustomUserRegisterForm(request.POST)
+    # form = CustomUserRegisterForm(request.POST)
     profile = request.user.profile
     form = ProfileForm(instance=profile)
 

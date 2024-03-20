@@ -1,10 +1,11 @@
 from django.shortcuts import render
 
-
 from .models import Services, InfoSlider, Menu, Entertainment
 from comments.models import Comments
 from users.models import Profile
 from .utils import search, dynamic_card, pagination
+from support.models import Support
+from support.forms import SupportForm
 
 
 def home(request):
@@ -70,5 +71,14 @@ def cards_page(request, pk, card_type):
 
 
 def about(request):
-    return render(request, 'mainapp/about.html')
+    form = SupportForm()
+    context = {'form': form}
 
+    if request.POST:
+        name = request.POST['name']
+        phone = request.POST['phone']
+
+        element = Support(sp_name=name, sp_phone=phone)
+        element.save()
+        return render(request, 'mainapp/about.html')
+    return render(request, 'mainapp/about.html', context)
