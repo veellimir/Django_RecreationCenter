@@ -1,3 +1,5 @@
 django
 pillow
 django-simple-captcha
+python-dotenv
+requests

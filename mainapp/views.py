@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
 
 from .models import Services, InfoSlider, Menu, Entertainment
 from comments.models import Comments
@@ -6,6 +7,7 @@ from users.models import Profile
 from .utils import search, dynamic_card, pagination
 from support.models import Support
 from support.forms import SupportForm
+from telebot.sendMessage import send_telegram
 
 
 def home(request):
@@ -79,6 +81,10 @@ def about(request):
         phone = request.POST['phone']
 
         element = Support(sp_name=name, sp_phone=phone)
+        messages.info(request, 'Спасибо за обращения, скоро мы свяжемся с вами')
+
         element.save()
-        return render(request, 'mainapp/about.html')
+        send_telegram(tg_name=name, tg_phone=phone)
+
+        return redirect('about')
     return render(request, 'mainapp/about.html', context)

@@ -1,8 +1,11 @@
 from pathlib import Path
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = 'django-insecure-y+ybi2k385lxmo116636zvphqwi)n)ukhl87z^n^jl$jaecxp9'
+SECRET_KEY = os.getenv('SECRET_KEY_PROJECT')
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -19,6 +22,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'comments.apps.CommentsConfig',
     'support.apps.SupportConfig',
+    'telebot.apps.TelebotConfig',
 
     'captcha',
 ]
@@ -79,7 +83,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'ru-RU'
 TIME_ZONE = 'UTC'
 USE_I18N = True
-USE_TZ = True
+USE_TZ = False
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'static'

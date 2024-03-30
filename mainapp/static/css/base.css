@@ -953,6 +953,7 @@ header {
   position: relative;
   transition: all 3s ease;
   opacity: 0;
+  z-index: 10;
 }
 
 .alert-content {position: absolute;}

@@ -4,8 +4,9 @@
    &#9000; Это вымышленный проект Базы Отдыха, создан в целях демонстрации моего владения техническим стеком &#128421;
    Сайт предназначен для ознакомления и бронирования услуг в сфере культурного досуга 7 века, в стиле эпохи Викингов. <br><br>
 
-   Важно ! Сайт находиться на стадии разработки
-   host: https://djangodiploma.pythonanywhere.com/
+   Важно ! Сайт находиться на стадии разработки<br>
+   host: https://djangodiploma.pythonanywhere.com/ <br>
+   telebot для заявок с сайта: https://t.me/Recreation_Center_bot вступить в группу заявки с сайта<br>
 </p>
 <h3 align="center" style="color: green;">The stack used:</h3>
 
@@ -46,6 +47,7 @@
    :white_check_mark: Динамическая Пагинация<br>
    :white_check_mark: Месторасположение на ЯКарте<br>
    :white_check_mark: Админ панель и модели на Русском языке<br>
+   :white_check_mark: Телебот<br>
 
 <hr>   
 
@@ -53,7 +55,7 @@
 
    :black_square_button: Мобильное меню<br>
    :black_square_button: Адаптация сайта до 350px<br>
-   :black_square_button: Телебот<br>
+   :black_square_button: Корзина и бронирование<br>
 
 <hr>
 
@@ -166,6 +168,14 @@ for Windows: <br>
     adminhouse
 ###### Password
     123
+
+##### Для ТГ
+      api = 7063888510:AAHBEKEBjlnHFmC2imoI2Oq2hC3KPGqQ_N8
+      id = -4134546943
+
+      в сообщения добавить
+      Имя: {name} 
+      Телефон: {phone}
 
 <hr>
 
